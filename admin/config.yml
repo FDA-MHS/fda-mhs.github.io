@@ -117,10 +117,10 @@ collections:
 
       - file: "_data/social.yml"
         label: "Social Links"
-        name: "socials"
+        name: "social"
         fields:
           - label: "Social Media Links"
-            name: "socials"
+            name: "social"
             widget: "list"
             fields:
               - { label: "Name", name: "name", widget: "string" }
