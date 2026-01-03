@@ -1,6 +1,6 @@
 baseurl: '/'
 permalink: pretty
-title: 'Jekyll Serif'
+title: 'FDA MHS'
 
 logo:
   mobile: "images/logo-mobile.svg"
@@ -16,7 +16,7 @@ home:
 collections:
   events:
     output: true
-    sort_by: weight
+    sort_by: date
   team:
     output: true
 

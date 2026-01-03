@@ -22,8 +22,7 @@ collections:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", required: false }
-      - { label: "Weight (ordering)", name: "weight", widget: "number", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Content", name: "body", widget: "markdown" }
 
   # ---------------------------
@@ -42,7 +41,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", required: false }
       - { label: "Profile Image", name: "image", widget: "image", required: false }
       - { label: "Job Title", name: "jobtitle", widget: "string", required: false }
-      - { label: "LinkedIn URL", name: "linkedinurl", widget: "string", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
       - { label: "Weight (ordering)", name: "weight", widget: "number", required: false }
       - { label: "Bio", name: "body", widget: "markdown" }
 

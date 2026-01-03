@@ -3,7 +3,7 @@ title: "Robert Johnson"
 date: 2018-12-20T13:44:23+10:00
 image: "images/vince-fleming-613817-unsplash.jpg"
 jobtitle: "Developer"
-linkedinurl: "https://www.linkedin.com/"
+email: 
 weight: 3
 ---
 

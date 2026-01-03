@@ -19,18 +19,61 @@ bodyClass: "page-events"
 </div>
 
 <div class="container pt-6 pb-6">
-  <div class="row">
-    {% for event in site.events %}
+  {% assign now = 'now' | date: '%s' %}
+  {% assign future_events = site.events | where_exp: "event", "event.date" | sort: 'date' | reverse %}
+  {% assign past_events = site.events | where_exp: "event", "event.date" | sort: 'date' | reverse %}
+  
+  {% assign filtered_future = "" | split: "" %}
+  {% assign filtered_past = "" | split: "" %}
+  
+  {% for event in future_events %}
+    {% assign event_date = event.date | date: '%s' %}
+    {% if event_date >= now %}
+      {% assign filtered_future = filtered_future | push: event %}
+    {% else %}
+      {% assign filtered_past = filtered_past | push: event %}
+    {% endif %}
+  {% endfor %}
+  
+  {% if filtered_future.size > 0 %}
+  <h2 class="mb-4">Upcoming Events</h2>
+  <div class="row mb-5">
+    {% for event in filtered_future %}
     <div class="col-12 col-md-6 mb-3">
       <div class="event event-summary">
         <div class="event-content">
           <h2 class="event-title">
             <a href="{{ event.url | relative_url }}">{{ event.title }}</a>
           </h2>
+          {% if event.date %}
+          <p class="event-date"><strong>{{ event.date | date: "%B %d, %Y" }}</strong></p>
+          {% endif %}
           <p>{{ event.excerpt | markdownify | strip_html | truncate: 100 }}</p>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
+  {% endif %}
+  
+  {% if filtered_past.size > 0 %}
+  <h2 class="mb-4">Past Events</h2>
+  <div class="row">
+    {% for event in filtered_past %}
+    <div class="col-12 col-md-6 mb-3">
+      <div class="event event-summary">
+        <div class="event-content">
+          <h2 class="event-title">
+            <a href="{{ event.url | relative_url }}">{{ event.title }}</a>
+          </h2>
+          {% if event.date %}
+          <p class="event-date"><strong>{{ event.date | date: "%B %d, %Y" }}</strong></p>
+          {% endif %}
+          <p>{{ event.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
 </div>

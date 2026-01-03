@@ -3,7 +3,7 @@ title: "Peter Van Eijk"
 date: 2018-11-19T10:47:58+10:00
 image: "images/peter-van-eijk-711986-unsplash.jpg"
 jobtitle: "Director"
-linkedinurl: "https://www.linkedin.com/"
+email: 
 promoted: true
 weight: 1
 ---
