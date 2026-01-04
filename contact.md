@@ -11,7 +11,13 @@ The Future Doctors of America Club is located on the fourth floor in room number
 
 [Leadership Pre-Survey](https://docs.google.com/forms/d/e/1FAIpQLSeroAvX2OiyeRVErdaVEI901404b-8FoliFMFnvqXs0D5KpKQ/viewform)
 
-# Contact Information 
+[](https://docs.google.com/forms/d/e/1FAIpQLSeroAvX2OiyeRVErdaVEI901404b-8FoliFMFnvqXs0D5KpKQ/viewform)
+
+![](/images/room.jpg)
+
+
+
+# Contact Information
 
 Sponsor: Mr. William Stewart
 
