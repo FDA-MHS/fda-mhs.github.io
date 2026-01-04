@@ -56,31 +56,41 @@ collections:
         label: "Home"
         name: "home"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Layout", name: "layout", widget: "hidden", default: "home" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Webpage Title", name: "title", widget: "string" }
+          - { label: "Title", name: "description", widget: "text" }
           - { label: "Intro Image", name: "intro_image", widget: "image", required: false }
-          - { label: "Intro Image Absolute", name: "intro_image_absolute", widget: "boolean", required: false }
-          - { label: "Hide Intro Image on Mobile", name: "intro_image_hide_on_mobile", widget: "boolean", required: false }
           - { label: "Show Call Box", name: "show_call_box", widget: "boolean", required: false }
 
       - file: "about.md"
         label: "About Page"
         name: "about"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-          - { label: "Description", name: "description", widget: "string" }
-          - { label: "Body Class", name: "bodyClass", widget: "string", required: false }
+          - { label: "Webpage Title", name: "title", widget: "string" }
+          - { label: "Title", name: "description", widget: "string" }
+          - { label: "Intro Image", name: "intro_image", widget: "image", required: false }
           - { label: "Content", name: "body", widget: "markdown" }
 
       - file: "contact.md"
         label: "Contact Page"
         name: "contact"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Layout", name: "layout", widget: "hidden", default: "contact" }
-          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Webpage Title", name: "title", widget: "string" }
+          - { label: "Title", name: "description", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - file: "members.md"
+        label: "Members Page"
+        name: "members"
+          - { label: "Webpage Title", name: "title", widget: "string" }
+          - { label: "Title", name: "description", widget: "text" }
+          - { label: "Intro Image", name: "intro_image", widget: "image", required: false }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - file: "about.md"
+        label: "About Page"
+        name: "about"
+          - { label: "Webpage Title", name: "title", widget: "string" }
+          - { label: "Title", name: "description", widget: "text" }
           - { label: "Content", name: "body", widget: "markdown" }
 
   # ---------------------------

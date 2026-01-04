@@ -20,8 +20,11 @@ bodyClass: "page-members"
 
 <div class="container pt-6 pb-6">
     <div class="row">
-        {% assign promoted_members = site.members | where: "promoted", true | sort: "weight" %}
-        {% for member in promoted_members %}
+        {% assign promoted_with_weight = site.members | where: "promoted", true | where_exp: "member", "member.weight" | sort: "weight" %}
+        {% assign promoted_without_weight = site.members | where: "promoted", true | where_exp: "member", "member.weight == nil" %}
+        {% assign all_promoted = promoted_with_weight | concat: promoted_without_weight %}
+        
+        {% for member in all_promoted %}
         <div class="col-12 col-md-6 mb-2">
             <div class="member member-summary member-summary-large">
                 {% if member.image %}
@@ -33,7 +36,7 @@ bodyClass: "page-members"
                     <h2 class="member-name"><a href="{{ member.url | relative_url }}">{{ member.title }}</a></h2>
                     <p class="member-description">{{ member.jobtitle }}</p>
                     {% if member.email %}
-                    <a target="_blank" href="{{ member.email }}" rel="noreferrer">Email</a>
+                    <a href="mailto:{{ member.email }}">{{ member.email }}</a>
                     {% endif %}
                 </div>
                 <div class="member-content">{{ member.excerpt | truncate: 120 }}</div>
@@ -42,8 +45,11 @@ bodyClass: "page-members"
         {% endfor %}
     </div>
     <div class="row pt-6 pb-6">
-        {% assign members = site.members | where: "promoted", empty | sort: "weight" %}
-        {% for member in members %}
+        {% assign members_with_weight = site.members | where: "promoted", empty | where_exp: "member", "member.weight" | sort: "weight" %}
+        {% assign members_without_weight = site.members | where: "promoted", empty | where_exp: "member", "member.weight == nil" %}
+        {% assign all_members = members_with_weight | concat: members_without_weight %}
+        
+        {% for member in all_members %}
         <div class="col-12 col-md-4 mb-3">
             <div class="member member-summary">
                 {% if member.image %}

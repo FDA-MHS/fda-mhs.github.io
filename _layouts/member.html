@@ -16,6 +16,9 @@ bodyClass: "page-member"
         {% if page.jobtitle %}
         <p class="member-jobtitle"><strong>{{ page.jobtitle }}</strong></p>
         {% endif %}
+        {% if page.email %}
+        <p class="member-email"><a href="mailto:{{ page.email }}">{{ page.email }}</a></p>
+        {% endif %}
         <div class="content">{{content}}</div>
       </div>
     </div>
