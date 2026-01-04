@@ -1,19 +1,7 @@
 social:
-  - name: "Github"
-    link: "https://github.com/zerostaticthemes/jekyll-serif-theme"
-    image: "images/github.svg"
-  - name: "Twitter"
-    link: "https://twitter.com/zerostaticio"
-    image: "images/twitter.svg"
-  - name: "Facebook"
-    link: "https://facebook.com"
-    image: "images/facebook.svg"
-  - name: "Email"
-    link: "mailto:ekyllserif@example.com"
-    image: "images/email.svg"
-  - name: "Instagram"
-    link: "https://instagram.com"
-    image: "images/instagram.svg"
-  - name: "Discord"
-    link: "https://discord.com"
-    image: "images/discord.svg"
+  - name: Email
+    link: mailto:ag52412@schools.fccps.org
+    image: images/email.svg
+  - name: Github
+    link: https://github.com/FDA-MHS/fda-mhs.github.io
+    image: images/github.svg
