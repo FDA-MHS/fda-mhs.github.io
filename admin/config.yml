@@ -9,9 +9,6 @@ media_folder: "images"
 
 collections:
 
-  # ---------------------------
-  # Events (collection pages)
-  # ---------------------------
   - name: "events"
     label: "Events"
     folder: "_events"
@@ -25,9 +22,6 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Content", name: "body", widget: "markdown" }
 
-  # ---------------------------
-  # MEMBERS (collection pages)
-  # ---------------------------
   - name: "members"
     label: "Club Members"
     folder: "_members"
@@ -45,9 +39,6 @@ collections:
       - { label: "Order", name: "weight", widget: "number", required: false }
       - { label: "Bio", name: "body", widget: "markdown" }
 
-  # ---------------------------
-  # SINGLETON PAGES
-  # ---------------------------
   - name: "pages"
     label: "Pages"
     files:
@@ -67,7 +58,6 @@ collections:
         fields:
           - { label: "Webpage Title", name: "title", widget: "string" }
           - { label: "Title", name: "description", widget: "string" }
-          - { label: "Intro Image", name: "intro_image", widget: "image", required: false }
           - { label: "Content", name: "body", widget: "markdown" }
 
       - file: "contact.md"
@@ -87,12 +77,13 @@ collections:
           - { label: "Intro Image", name: "intro_image", widget: "image", required: false }
           - { label: "Content", name: "body", widget: "markdown" }
 
-      - file: "about.md"
-        label: "About Page"
-        name: "about"
+      - file: "events.md"
+        label: "Events Page"
+        name: "events"
         fields:
           - { label: "Webpage Title", name: "title", widget: "string" }
           - { label: "Title", name: "description", widget: "text" }
+          - { label: "Intro Image", name: "intro_image", widget: "image", required: false }
           - { label: "Content", name: "body", widget: "markdown" }
 
   # ---------------------------
