@@ -20,8 +20,19 @@ bodyClass: "page-events"
 
 <div class="container pt-6 pb-6">
   {% assign now = 'now' | date: '%s' %}
-  {% assign events_with_date = site.events | where_exp: "event", "event.event_date" | sort: 'event_date' | reverse %}
-  {% assign events_without_date = site.events | where_exp: "event", "event.event_date == nil or event.event_date == ''" %}
+  
+  {% assign events_with_date = "" | split: "" %}
+  {% assign events_without_date = "" | split: "" %}
+  
+  {% for event in site.events %}
+    {% if event.event_date %}
+      {% assign events_with_date = events_with_date | push: event %}
+    {% else %}
+      {% assign events_without_date = events_without_date | push: event %}
+    {% endif %}
+  {% endfor %}
+  
+  {% assign events_with_date = events_with_date | sort: 'event_date' | reverse %}
   
   {% assign filtered_future = "" | split: "" %}
   {% assign filtered_past = "" | split: "" %}
