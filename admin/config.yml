@@ -126,3 +126,19 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Link", name: "link", widget: "string" }
               - { label: "Icon Image", name: "image", widget: "image" }
+
+      - file: "_config.yml"
+        label: "Site Configuration"
+        name: "site_config"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - label: "Logo Settings"
+            name: "logo"
+            widget: "object"
+            fields:
+              - { label: "Mobile Logo", name: "mobile", widget: "image" }
+              - { label: "Mobile Height", name: "mobile_height", widget: "string", default: "32px" }
+              - { label: "Mobile Width", name: "mobile_width", widget: "string", default: "32px" }
+              - { label: "Desktop Logo", name: "desktop", widget: "image" }
+              - { label: "Desktop Height", name: "desktop_height", widget: "string", default: "32px" }
+              - { label: "Desktop Width", name: "desktop_width", widget: "string", default: "120px" }
