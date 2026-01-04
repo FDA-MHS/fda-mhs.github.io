@@ -1,6 +1,6 @@
 ---
-title: Fetal Pig Dissection
-date: 2025-06-03T00:00:00.000-04:00
-image: /images/fetal_pig_dissection.jpg
+title: Pediatric Rheumatology Specialist Dr. Cidon Guest Speaker
+date: 2024-11-22T00:00:00.000-05:00
+image: /images/pediatric_rheumatology_specialist_dr._cidon_guest_speaker.png
 ---
-Group effort to dissect and learn about the anatomy of a fetal pig
+Dr. Michal Cidon came in as a guest speaker to speak with members of FDA about the medical field and her career
