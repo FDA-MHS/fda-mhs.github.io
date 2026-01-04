@@ -1,0 +1,62 @@
+---
+layout: default
+bodyClass: "page-members"
+---
+
+<div class="intro">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
+                {{ content }}
+            </div>
+            {% if page.intro_image %}
+            <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
+                <img alt={{ page.title }} class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relative_url }}" />
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="container pt-6 pb-6">
+    <div class="row">
+        {% assign promoted_members = site.members | where: "promoted", true | sort: "weight" %}
+        {% for member in promoted_members %}
+        <div class="col-12 col-md-6 mb-2">
+            <div class="member member-summary member-summary-large">
+                {% if member.image %}
+                <div class="member-image">
+                    <img width="90" height="90" alt="{{ member.title }}" class="img-fluid mb-2" src="{{ member.image | relative_url }}" />
+                </div>
+                {% endif %}
+                <div class="member-meta">
+                    <h2 class="member-name"><a href="{{ member.url | relative_url }}">{{ member.title }}</a></h2>
+                    <p class="member-description">{{ member.jobtitle }}</p>
+                    {% if member.email %}
+                    <a target="_blank" href="{{ member.email }}" rel="noreferrer">Email</a>
+                    {% endif %}
+                </div>
+                <div class="member-content">{{ member.excerpt | truncate: 120 }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="row pt-6 pb-6">
+        {% assign members = site.members | where: "promoted", empty | sort: "weight" %}
+        {% for member in members %}
+        <div class="col-12 col-md-4 mb-3">
+            <div class="member member-summary">
+                {% if member.image %}
+                <div class="member-image">
+                    <img width="60" height="60" alt="{{ member.title }}" class="img-fluid mb-2" src="{{ member.image | relative_url }}" />
+                </div>
+                {% endif %}
+                <div class="member-meta">
+                    <h2 class="member-name"><a href="{{ member.url | relative_url }}">{{ member.title }}</a></h2>
+                    <p class="member-description">{{ member.jobtitle }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
