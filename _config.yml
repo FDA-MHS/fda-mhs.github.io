@@ -30,7 +30,7 @@ defaults:
       path: ""
       type: "members"
     values:
-      layout: "members"
+      layout: "member"
 
 sass:
   style: compressed # possible values: nested expanded compact compressed
