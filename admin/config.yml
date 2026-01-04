@@ -19,7 +19,7 @@ collections:
       preview: false
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime", required: false }
+      - { label: "Date", name: "date", widget: "datetime", required: false, default: "" }
       - { label: "Event Image", name: "image", widget: "image", required: false }
       - { label: "Content", name: "body", widget: "markdown" }
 
@@ -87,9 +87,6 @@ collections:
           - { label: "Intro Image", name: "intro_image", widget: "image", required: false }
           - { label: "Content", name: "body", widget: "markdown" }
 
-  # ---------------------------
-  # DATA FILES
-  # ---------------------------
   - name: "data"
     label: "Site Data"
     files:
