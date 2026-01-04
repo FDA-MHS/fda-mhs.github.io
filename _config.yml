@@ -13,22 +13,21 @@ sass:
 defaults:
   - scope:
       path: ""
-      type: services
+      type: events
     values:
-      layout: service
+      layout: event
   - scope:
       path: ""
-      type: team
+      type: members
     values:
-      layout: team
+      layout: member
 favicon: images/favicon-32x32.svg
 collections:
-  services:
+  events:
     output: true
-    sort_by: weight
-  team:
+  members:
     output: true
-title: Jekyll Serif
+title: FDA MHS
 exclude:
   - Gemfile
   - Gemfile.lock
