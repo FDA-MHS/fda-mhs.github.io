@@ -21,7 +21,7 @@ defaults:
       type: members
     values:
       layout: member
-favicon: images/favicon-32x32.svg
+favicon: /images/club_logo.png
 collections:
   events:
     output: true
