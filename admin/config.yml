@@ -96,7 +96,6 @@ collections:
         name: "contact_data"
         fields:
           - { label: "Email", name: "email", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
 
       - file: "_data/features.yml"
         label: "Features"
