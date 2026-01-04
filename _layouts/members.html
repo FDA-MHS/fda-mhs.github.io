@@ -11,7 +11,7 @@ bodyClass: "page-members"
             </div>
             {% if page.intro_image %}
             <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-                <img alt={{ page.title }} class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relative_url }}" />
+                <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relative_url }}" />
             </div>
             {% endif %}
         </div>
@@ -23,7 +23,7 @@ bodyClass: "page-members"
     {% assign promoted_without_weight = "" | split: "" %}
     
     {% for member in site.members %}
-        {% if member.promoted %}
+        {% if member.promoted == true %}
             {% if member.weight %}
                 {% assign promoted_with_weight = promoted_with_weight | push: member %}
             {% else %}
@@ -65,13 +65,15 @@ bodyClass: "page-members"
     {% assign founding_without_weight = "" | split: "" %}
     
     {% for member in site.members %}
-        {% if member.founding and member.promoted != true %}
-            {% if member.weight %}
-                {% assign founding_with_weight = founding_with_weight | push: member %}
-            {% else %}
-                {% assign founding_without_weight = founding_without_weight | push: member %}
+        {% unless member.promoted == true %}
+            {% if member.founding == true %}
+                {% if member.weight %}
+                    {% assign founding_with_weight = founding_with_weight | push: member %}
+                {% else %}
+                    {% assign founding_without_weight = founding_without_weight | push: member %}
+                {% endif %}
             {% endif %}
-        {% endif %}
+        {% endunless %}
     {% endfor %}
     
     {% assign founding_with_weight = founding_with_weight | sort: "weight" %}
@@ -102,13 +104,13 @@ bodyClass: "page-members"
     {% assign regular_without_weight = "" | split: "" %}
     
     {% for member in site.members %}
-        {% if member.promoted != true and member.founding != true %}
+        {% unless member.promoted == true or member.founding == true %}
             {% if member.weight %}
                 {% assign regular_with_weight = regular_with_weight | push: member %}
             {% else %}
                 {% assign regular_without_weight = regular_without_weight | push: member %}
             {% endif %}
-        {% endif %}
+        {% endunless %}
     {% endfor %}
     
     {% assign regular_with_weight = regular_with_weight | sort: "weight" %}
