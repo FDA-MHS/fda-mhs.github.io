@@ -1,5 +1,5 @@
 ---
-title: Future Doctors of America
+title: Future Doctors of<br>America
 layout: home
 description: Join us in exploring the medical field through hands-on learning
   experiences, leadership experiences, dissections, internships, guest speakers,
